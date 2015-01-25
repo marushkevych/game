@@ -93,7 +93,7 @@ Cell.prototype.equals = function(cell)
 Cell.prototype.select = function()
 {
   //this.img.src=this.color +"_selected.gif";
-  this.img.src = "grey.gif";
+  this.img.src = this.color + "_s.gif";
 };
 
 Cell.prototype.unselect = function()
