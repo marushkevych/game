@@ -1,0 +1,64 @@
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=ISO-8859-1"/>
+    <title>Example 1-1</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="board.css" />
+    <script type="text/javascript" src="PathFinder.js"></script>
+    <script type="text/javascript" src="Board.js"></script>
+    <script type="text/javascript" src="Cell.js"></script>
+    <script type="text/javascript" src="test.js"></script>
+    <script type="text/javascript">
+        function writeScore(s)
+        {
+          document.getElementById('score').innerHTML = s;
+        }
+    </script>
+  </head>
+  <body>
+
+
+
+ <center>
+     <div>Your score is <span id='score' name='score'>0</span></div>
+
+
+
+
+</center>
+
+
+  <script type="text/javascript">
+
+
+
+      // display next colors
+      document.writeln("<center><table><tr>");
+      for (var i = 0; i < 3; i++)
+      {
+        document.writeln('<td><img width="32" id="' + i + '" height="32" border="0" src="0.gif"  /></td>');
+      }
+      document.writeln("</tr></table>");
+
+      // render board
+      document.writeln("<table>");
+      for (var i = 0; i < board.size; i++)
+      {
+        document.writeln("<tr>");
+        for (var j = 0; j < board.size; j++)
+        {
+          var id = i + "-" + j;
+          document.writeln('<td id="' + id + 'td" ><img width="32" id="' + id + '" height="32" border="0" src="0.gif" onclick="doclick(' + i + ',' + j + ')"   /></td>');
+          var cell = new Cell(i, j, id, board);
+          board.addCell(cell);
+        }
+        document.writeln("</tr>");
+      }
+      document.writeln("</table></center>");
+
+  </script>
+  <div id='log'></div>
+
+  </body>
+</html>
